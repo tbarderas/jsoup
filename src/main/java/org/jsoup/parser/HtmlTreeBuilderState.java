@@ -1230,7 +1230,8 @@ enum HtmlTreeBuilderState {
                     if (name.equals("html"))
                         return tb.process(start, InBody);
                     else if (name.equals("option")) {
-                        tb.process(new Token.EndTag("option"));
+                        // commented out to allow nested options in select
+                        // tb.process(new Token.EndTag("option"));
                         tb.insert(start);
                     } else if (name.equals("optgroup")) {
                         if (tb.currentElement().nodeName().equals("option"))
